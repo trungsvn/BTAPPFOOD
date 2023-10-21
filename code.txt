@@ -1,3 +1,4 @@
+# tạo table users
 CREATE TABLE users (
 	user_id INT PRIMARY KEY AUTO_INCREMENT,
 	full_name VARCHAR(50),
@@ -5,6 +6,7 @@ CREATE TABLE users (
 	password VARCHAR(255)
 );
 
+# tạo table restaurant
 CREATE TABLE restaurant (
 	res_id INT PRIMARY KEY AUTO_INCREMENT,
 	res_name VARCHAR(50),
@@ -12,6 +14,7 @@ CREATE TABLE restaurant (
 	descr VARCHAR(255)
 );
 
+# tạo table rate_res
 CREATE TABLE rate_res (
 	rate_id INT PRIMARY KEY AUTO_INCREMENT,
 	user_id INT,
@@ -22,6 +25,7 @@ CREATE TABLE rate_res (
 	date_rate DATE
 );
 
+# tạo table like_res
 CREATE TABLE like_res (
 	like_id INT PRIMARY KEY AUTO_INCREMENT,
 	user_id INT,
@@ -31,11 +35,13 @@ CREATE TABLE like_res (
 	date_rate DATE
 );
 
+# tạo table food_type
 CREATE TABLE food_type(
 	type_id INT PRIMARY KEY AUTO_INCREMENT,
 	type_name VARCHAR(50)
 );
 
+# tạo table food
 CREATE TABLE food (
 	food_id INT PRIMARY KEY AUTO_INCREMENT,
 	food_name VARCHAR(50),
@@ -46,6 +52,7 @@ CREATE TABLE food (
 	FOREIGN KEY (type_id) REFERENCES food_type(type_id)
 );
 
+# tạo table sub_food
 CREATE TABLE sub_food (
 	sub_id INT PRIMARY KEY AUTO_INCREMENT,
 	sub_name VARCHAR(50),
@@ -55,6 +62,7 @@ CREATE TABLE sub_food (
 	FOREIGN KEY (food_id) REFERENCES food(food_id)
 );
 
+# tạo table orders
 CREATE TABLE orders (
 	order_id INT PRIMARY KEY AUTO_INCREMENT,
 	user_id INT,
@@ -64,3 +72,118 @@ CREATE TABLE orders (
 	date_rate DATE
 );
 
+#
+# tạo nội dung users
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (1, 'Myrtice Klein', 'tprice@example.net', 'fb5b23491929fb1a260ecbde00dcb63c3157212e');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (2, 'Jaclyn Kozey', 'wilkinson.euna@example.com', 'c3e58bf083e8f75623060096a12bd37852b60886');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (3, 'Alexanne Leannon', 'buckridge.alfreda@example.org', '286bec16afee73bb870d6ae8c6ca79e96d7cb617');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (4, 'Prof. Laurel Yundt V', 'schaefer.katrine@example.com', 'a0b081308037972b067332553051c86d64f5fea2');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (5, 'Eryn Pagac', 'hoyt.beatty@example.net', '147c016862bd576e1ccf555091571faae95628ce');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (6, 'Carson Treutel I', 'udare@example.org', 'a5d4b3b7c91b2e632c93de04e20b34dabef2640c');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (7, 'Dr. Noel Jast', 'qweimann@example.com', '437b68a7eed35dbbb3671cb323abe73dad331352');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (8, 'Ms. Kathlyn Watsica', 'kjohnston@example.org', '777ff987b1bde031465b64af8f1882658b225cee');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (9, 'Keven Maggio I', 'hilpert.eryn@example.org', '0d8305647652f5b064f17dd551199eec631572f0');
+INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`) VALUES (10, 'Rebeka Hilpert', 'adams.desmond@example.com', '6754732baeb6b303387f2e285f9dd7d634ac1ea7');
+
+# tạo nội dung restaurant
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (1, 'consequatur', 'tmp//744f9314e5c534bc10d79cbc2502f55c.jpg', 'umro');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (2, 'nemo', 'tmp//59530c166aa0a7bf7a027b12c7a9000f.jpg', 'orte');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (3, 'laborum', 'tmp//459550d4417494102846bcf4fb222311.jpg', 'zjwl');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (4, 'quis', 'tmp//d1a9b29b44487fa48b37a4f59e75c5ce.jpg', 'fewy');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (5, 'illum', 'tmp//799e3cf2bfdd89de8e9a2fe3dafb318b.jpg', 'dnji');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (6, 'omnis', 'tmp//7b4f4fba8309a5e4015be6a0917be915.jpg', 'vmhv');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (7, 'fuga', 'tmp//47cf6a716a96b228abb89e505eaa6f9f.jpg', 'xqwi');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (8, 'non', 'tmp//6f68059fdcab68fd5321129c58430ac1.jpg', 'tjfu');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (9, 'repellendus', 'tmp//0f542fc532a520289a5fb7795bb3e200.jpg', 'jfuf');
+INSERT INTO `restaurant` (`res_id`, `res_name`, `image`, `descr`) VALUES (10, 'qui', 'tmp//aff5555d522d5098866947b9c2c3869a.jpg', 'ymfn');
+
+# tạo nội dung food_type
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (1, 'et');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (2, 'nihil');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (3, 'non');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (4, 'velit');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (5, 'numquam');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (6, 'voluptatem');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (7, 'qui');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (8, 'a');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (9, 'qui');
+INSERT INTO `food_type` (`type_id`, `type_name`) VALUES (10, 'delectus');
+
+# tạo nội dung 
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (1, 'et', 'tmp//add6c68dd5d475a135c3d738b6c47e8b.jpg', '0', 'tjnv', 1);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (2, 'beatae', 'tmp//ebd1c7a2314423ef584bce5825c5a587.jpg', '27118900', 'wynz', 2);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (3, 'recusandae', 'tmp//fa28ff0f1de5a71f6e1d5736e5be6dbf.jpg', '0', 'debo', 3);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (4, 'amet', 'tmp//d3ed60f9e7bd5f8299a9247793f78ce7.jpg', '170745000', 'jbyw', 4);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (5, 'corporis', 'tmp//e7cd499a9470a72974ca6c55ccd0fff2.jpg', '122.908', 'ssui', 5);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (6, 'facilis', 'tmp//8dde1dcfb84066af9162e6f6bd12af60.jpg', '18205900', 'tvzg', 6);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (7, 'qui', 'tmp//58165c2549b19c97217aea3929364784.jpg', '1475250', 'yyav', 7);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (8, 'ducimus', 'tmp//4ab5620ffa73404cd2b4e0e88dc56c37.jpg', '4.04811', 'ruez', 8);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (9, 'iste', 'tmp//fd98fa3a7ed199597a3cbced0230dadc.jpg', '4098680', 'fsvh', 9);
+INSERT INTO `food` (`food_id`, `food_name`, `image`, `price`, `descr`, `type_id`) VALUES (10, 'eius', 'tmp//31b15f55372c5cd3658db8045738a2bc.jpg', '11.5006', 'ozfk', 10);
+
+# tạo nội dung like_res
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (1, 1, 1, '2015-05-14');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (2, 2, 2, '2011-10-03');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (3, 3, 3, '2002-02-21');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (4, 4, 4, '1970-12-22');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (5, 5, 5, '2017-06-20');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (6, 6, 6, '2008-01-23');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (7, 7, 7, '2015-09-08');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (8, 8, 8, '2011-11-14');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (9, 9, 9, '2014-06-25');
+INSERT INTO `like_res` (`like_id`, `user_id`, `res_id`, `date_rate`) VALUES (10, 10, 10, '1974-01-04');
+
+# tạo nội dung orders
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (1, 1, 1, '1982-09-24');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (2, 2, 2, '2011-05-27');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (3, 3, 3, '2017-11-03');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (4, 4, 4, '2005-12-04');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (5, 5, 5, '1993-04-27');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (6, 6, 6, '2006-10-14');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (7, 7, 7, '2014-04-03');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (8, 8, 8, '1991-06-10');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (9, 9, 9, '2002-01-08');
+INSERT INTO `orders` (`order_id`, `user_id`, `food_id`, `date_rate`) VALUES (10, 10, 10, '2002-11-03');
+
+# tạo nội dung rate_res
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (1, 1, 1, 202846, '1999-10-06');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (2, 2, 2, 5, '1999-12-12');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (3, 3, 3, 52, '1992-02-24');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (4, 4, 4, 0, '2023-10-18');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (5, 5, 5, 0, '2012-09-15');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (6, 6, 6, 0, '2016-01-16');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (7, 7, 7, 201487, '1992-07-13');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (8, 8, 8, 4465941, '1983-02-21');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (9, 9, 9, 234460, '1985-05-04');
+INSERT INTO `rate_res` (`rate_id`, `user_id`, `res_id`, `amount`, `date_rate`) VALUES (10, 10, 10, 2, '1973-07-25');
+
+# tạo nội dung sub_food
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (1, 'facilis', '46503.4', 'rfjk', 1);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (2, 'illum', '4.36771', 'oyce', 2);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (3, 'nihil', '347.956', 'vbga', 3);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (4, 'sed', '40.1413', 'nndb', 4);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (5, 'consequuntur', '1917100', 'qaad', 5);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (6, 'sed', '5088.07', 'liwp', 6);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (7, 'vel', '524.802', 'uzdn', 7);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (8, 'ad', '2322.04', 'blvw', 8);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (9, 'accusantium', '515.164', 'trsh', 9);
+INSERT INTO `sub_food` (`sub_id`, `sub_name`, `sub_price`, `descr`, `food_id`) VALUES (10, 'sed', '62865', 'cdpf', 10);
+
+#
+# Tìm 5 người đã like nhà hàng nhiều nhất.
+SELECT * FROM users, like_res, restaurant
+WHERE (users.user_id = like_res.user_id) AND (like_res.res_id = restaurant.res_id);
+
+# Tìm 2 nhà hàng có lượt like nhiều nhất.
+SELECT * FROM restaurant, like_res
+WHERE (restaurant.res_id = like_res.res_id)
+
+# Tìm người đã đặt hàng nhiều nhất.
+SELECT * FROM users, orders
+WHERE (users.user_id = orders.user_id)
+
+# Tìm người dùng không hoạt động trong hệ thống
+(không đặt hàng, không like, không đánh giá nhà
+hàng).
+SELECT * FROM users, orders, like_res
+WHERE (orders.food_id = "") or (like_res.res_id = "");
